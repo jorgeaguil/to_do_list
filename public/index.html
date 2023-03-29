@@ -1,0 +1,102 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hola</title>
+</head>
+<body>
+<h1>Lista de tareas</h1>
+<form action="/add" method="POST">
+    <input type="text" name="tarea" id="tarea">
+    <input type="submit" value="Agregar tarea">
+</form>
+<h2>Tareas por hacer</h2>
+<ul id="lista"> </ul>
+<form action="/done" method="POST">
+<input type="submit" value="Marcar como hecha">
+<h2>Tareas hechas</h2>
+<ul id="listaHechas"> </ul>
+<input type="submit" value="Eliminar tareas hechas">
+
+</form>        
+<script src="sistema.js"></script>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    /* Estilos para el encabezado */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para los formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+input[type="text"] {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /*width: 70%;*/
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077cc;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* Estilos para las listas */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 70%;
+}
+
+li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de eliminar tareas hechas */
+#listaHechas + input[type="submit"] {
+  margin-top: 1rem;
+  background-color: #cc0000;
+  color: #fff;
+}
+#listaHechas + input[type="submit"]:hover {
+  background-color: #a30000;
+}
+</style>
+</body>
+</html>
